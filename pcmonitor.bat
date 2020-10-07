@@ -1,3 +1,3 @@
 @ECHO OFF
-python "C:\Users\Felipe\Documents\PCMonitorPython\pcmonitorhidden.pyw"
+python "pcmonitorhidden.pyw"
 EXIT /B
