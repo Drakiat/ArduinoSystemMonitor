@@ -43,5 +43,36 @@ while True:
     data =("a"+str(GPUTemp)+"b"+str(UsedRAM)+"c"+str(UsedGPU)+"d"+str(CPUTemp)+"e")
     print("Data sent:"+ data)
     arduino.write(data.encode())
-    time.sleep(3)
+    time.sleep(1)
 
+
+
+    
+"""for sensor in hw_infos:
+    if sensor.Name==u'GPU Memory':
+        print(sensor)"""
+"""for sensor in hw_infos:
+    if sensor.SensorType==u'Data':
+        print(sensor.Value)
+    if sensor.Name == u'Used Memory':
+        print ("Used Memory: "+str(sensor.Value))
+    elif sensor.Name == u'Available Memory':
+        print("Available Memory: "+str(sensor.Value))
+    if sensor.SensorType==u'Temperature':
+        print("Temperature: "+str(sensor.Value))
+    if sensor.Name == u'CPU Package':
+        print("CPU Package: "+str(sensor.Value))
+    elif sensor.Name == u'GPU Core':
+        print("GPU Core: "+str(sensor.Value))
+    if sensor.SensorType==u'Clock':
+        print("Clock: "+str(sensor.Value))
+    if sensor.Name == u'CPU Core #1':
+        print("CPU Core #1: "+str(sensor.Value))
+    elif sensor.Name == u'GPU Core':
+        print("GPU Core: "+str(sensor.Value))
+    if sensor.SensorType==u'Data':
+        print("Data: "+str(sensor.Value))
+    if sensor.Name == u'Used Memory':
+        print("Used Memory: "+str(sensor.Value))"""
+
+ 
