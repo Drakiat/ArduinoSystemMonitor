@@ -1,7 +1,7 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
-LiquidCrystal_I2C lcd(0x27, 16, 2); // set the LCD address to 0x27 for a 16 chars and 2 line display
+LiquidCrystal_I2C lcd(0x27, 16, 2); // set the LCD address to 0x27 USE I2C SCANNER TO FIND YOUR ADDRESS IF THIS IS NOT IT
 int incomingByte = 0;
 String data;
 String a;
@@ -11,11 +11,9 @@ String d;
 void setup()
 {
   lcd.init();                      // initialize the lcd
-  // Print a message to the LCD.
   lcd.backlight();
   lcd.print("Loading...");
-  Serial.begin(9600);
-  //start serial
+  Serial.begin(9600);             //start serial
 }
 
 void loop()
