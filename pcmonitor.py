@@ -11,13 +11,22 @@ w = wmi.WMI(namespace="root\OpenHardwareMonitor")
 hw_infos = w.Sensor()
 arduino = serial.Serial()
 arduino.bauderate=9600
-arduino.port='COM3'
+arduino.port='COM3' #CHANGE THIS TO YOUR OWN COM PORT
 arduino.open()
 
 def SensorSetup():
     w = wmi.WMI(namespace="root\OpenHardwareMonitor")
     hw_infos = w.Sensor()
     for sensor in hw_infos:
+        ''' THE SENSORS HERE ARE THE ONES I FOUND IN MY SYSTEM, THEY WILL MOST LIKELY BE DIFFERENT FOR YOU DEPENDING WHAT HARDWARE YOU HAVE
+        TO FIND YOUR OWN HARDWARE SENSORS RUN THE FOLLOWING SCRIPT
+        
+        import wmi
+        w = wmi.WMI(namespace="root\OpenHardwareMonitor")
+        hw_infos = w.Sensor()
+        for sensor in hw_infos:
+            print(sensor)
+        '''
         if sensor.SensorType=="Temperature" and sensor.Name=="GPU Core":
             GPUTemp=math.ceil(sensor.Value)
             print("GPU Temp:"+str(GPUTemp)+"°C")
